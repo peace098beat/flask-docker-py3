@@ -25,7 +25,6 @@ COPY application.py ./
 
 EXPOSE 8000
 
-# CMD ["uwsgi","--ini","/var/www/uwsgi.ini"]
 CMD ["python", "application.py"]
 
 ```
