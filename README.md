@@ -10,4 +10,8 @@
  - flask
  - builtin Server
  - supervisor
- 
+
+## 03-nginx
+ - flask
+ - uwsgi
+ - nginx
