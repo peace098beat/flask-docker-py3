@@ -1,5 +1,5 @@
-IMAGE=flask/builtin2
-CONTAINER=c-flask-builtin2
+IMAGE=flask/nginx
+CONTAINER=c-flask-nginx
 
 
 build:
@@ -7,14 +7,15 @@ build:
 	
 run: 
 	docker run \
-		-p 80:8000 \
+		-p 80:80 \
 	    --name ${CONTAINER} \
 	     ${IMAGE} 
 	    
 run-it:
 	docker run -it \
-		-p 80:8000 \
+		-p 80:80 \
 	    ${IMAGE} /bin/bash
+
 
 exec:
 	docker exec -it ${CONTAINER} bash
@@ -33,3 +34,5 @@ la:
 
 logs:
 	docker logs ${CONTAINER}
+	
+restart: stop build run
